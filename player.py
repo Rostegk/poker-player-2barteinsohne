@@ -6,7 +6,7 @@ class Player:
 
     def betRequest(self, game_state):
         try:
-            self.tactics(game_state)
+            return self.tactics(game_state)
         except Exception as e:
             sys.stderr.write("WTF")
             sys.stderr.write(str(e))
