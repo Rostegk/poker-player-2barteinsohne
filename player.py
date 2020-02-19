@@ -6,26 +6,35 @@ class Player:
 
     def betRequest(self, game_state):
         try:
-            ourBet = self.tactics(game_state)
+
+            playerId = game_state["in_action"]
+            player = game_state["players"][playerId]
+
+            if len(game_state["community_cards"]) > 3:
+                ourBet = self.tacticsPreFlop(game_state)
+            else:
+                ourBet = self.tacticsPreFlop(game_state)
+
             sys.stderr.write("ourBEt" + str(ourBet) + "\n")
+
             if ourBet == None:
                 return 100
+
+            if ourBet > player["stack"]:
+                ourBet = player["stack"]
+
             return ourBet
         except Exception as e:
             sys.stderr.write("WTF")
             sys.stderr.write(str(e))
             return 100
 
-    def tactics(self, game_state):
+    def tacticsPreFlop(self, game_state):
         sys.stderr.write(str(game_state))
         playerId = game_state["in_action"]
         player = game_state["players"][playerId]
         minRaise = game_state["current_buy_in"] - player["bet"] + game_state["minimum_raise"]
-        if minRaise > player["stack"]:
-            minRaise = player["stack"]
         betSum = game_state["current_buy_in"] - player["bet"]
-        if betSum > player["stack"]:
-            betSum = player["stack"]
 
         card1 = player["hole_cards"][0]["rank"]
         card2 = player["hole_cards"][1]["rank"]
