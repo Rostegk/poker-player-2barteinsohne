@@ -42,7 +42,8 @@ class Player:
         numberCardsRaise = ["2", "3", "4", "5"]
 
         highCards = ["K","A"]
-        highNumber = ["2", "3", "4", "5", "6", "7", "8", "9",]
+        highNumber = [ "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+ ]
 
         sys.stderr.write("Card 1" + str(card1) + "\n")
         sys.stderr.write("Card 2" + str(card2) + "\n")
