@@ -32,8 +32,10 @@ class Player:
         if card1 == card2:
             sys.stderr.write("equalcards")
             if card1 in numberCardsRaise:
+                sys.stderr.write("equalnoraisejustbet")
                 return betSum
             else:
+                sys.stderr.write("equalandraise")
                 return minRaise
 
         if card1 in numberCards:
@@ -41,7 +43,7 @@ class Player:
 
         if card2 in numberCards:
             return 0
-
+        sys.stderr.write("justbet")
         return betSum
 
     def showdown(self, game_state):
