@@ -5,7 +5,6 @@ class Player:
     VERSION = "Schockofrosch"
 
     def betRequest(self, game_state):
-        return 100
         try:
             self.tactics(game_state)
         except Exception as e:
@@ -25,11 +24,13 @@ class Player:
         numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
         numberCardsRaise = ["2", "3", "4", "5"]
 
-        sys.stderr.write(str(betSum))
         sys.stderr.write("Card 1" + str(card1))
         sys.stderr.write("Card 2" + str(card1))
+        sys.stderr.write("minraise" + str(minRaise))
+        sys.stderr.write("betsum" + str(betSum))
 
         if card1 == card2:
+            sys.stderr.write("equalcards")
             if card1 in numberCardsRaise:
                 return betSum
             else:
