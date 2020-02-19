@@ -32,6 +32,9 @@ class Player:
         numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
         numberCardsRaise = ["2", "3", "4", "5"]
 
+        highCards = ["K","A"]
+        highNumber = ["2", "3", "4", "5", "6", "7", "8", "9",]
+
         sys.stderr.write("Card 1" + str(card1) + "\n")
         sys.stderr.write("Card 2" + str(card2) + "\n")
         sys.stderr.write("minraise" + str(minRaise) + "\n")
@@ -45,6 +48,12 @@ class Player:
             else:
                 sys.stderr.write("equalandraise" + "\n")
                 return minRaise
+
+        if card1 in highCards and card2 in highNumber:
+            return betSum
+
+        if card2 in highCards and card1 in highNumber:
+            return betSum
 
         if card1 in numberCards:
             return 0
