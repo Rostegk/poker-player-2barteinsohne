@@ -20,7 +20,7 @@ class Player:
         card1 = player["whole_cards"][0]
         card2 = player["whole_cards"][1]
         numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
-        numberCardsRaise = [["2", "3", "4", "5",]
+        numberCardsRaise = ["2", "3", "4", "5"]
 
         sys.stderr.write(str(betSum))
 
