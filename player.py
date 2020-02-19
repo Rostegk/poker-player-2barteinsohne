@@ -1,5 +1,6 @@
 import sys
 
+
 class Player:
     VERSION = "Schockofrosch"
 
@@ -9,7 +10,6 @@ class Player:
         except:
             return 100
 
-        
     def tactics(self, game_state):
         sys.stderr.write(str(game_state))
         playerId = game_state["in_action"]
@@ -19,22 +19,24 @@ class Player:
 
         card1 = player["whole_cards"][0]
         card2 = player["whole_cards"][1]
-        numberCards = ["2","3","4","5","6","7","8","9", "10"]
-        
+        numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
+        numberCardsRaise = [["2", "3", "4", "5",]
 
         sys.stderr.write(str(betSum))
-        
+
         if card1 == card2:
-            return minRaise
+            if card1 in numberCardsRaise:
+                return betSum
+            else:
+                return minRaise
 
         if card1 in numberCards:
             return 0
-        
+
         if card2 in numberCards:
             return 0
 
         return betSum
-
 
     def showdown(self, game_state):
         pass
