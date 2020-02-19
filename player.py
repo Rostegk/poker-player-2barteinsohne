@@ -10,10 +10,9 @@ class Player:
             player = game_state["players"][playerId]
 
             if len(game_state["community_cards"]) > 3:
-                ourBet = 100
+                ourBet = self.tacticsPreFlop(game_state)
             else:
                 ourBet = self.tacticsPreFlop(game_state)
-            ourBet = 100
             sys.stderr.write("ourBEt" + str(ourBet) + "\n")
 
             if ourBet == None:
