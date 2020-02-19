@@ -24,18 +24,18 @@ class Player:
         numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
         numberCardsRaise = ["2", "3", "4", "5"]
 
-        sys.stderr.write("Card 1" + str(card1))
-        sys.stderr.write("Card 2" + str(card1))
-        sys.stderr.write("minraise" + str(minRaise))
-        sys.stderr.write("betsum" + str(betSum))
+        sys.stderr.write("Card 1" + str(card1) + "\n")
+        sys.stderr.write("Card 2" + str(card2) + "\n")
+        sys.stderr.write("minraise" + str(minRaise) + "\n")
+        sys.stderr.write("betsum" + str(betSum) + "\n")
 
         if card1 == card2:
-            sys.stderr.write("equalcards")
+            sys.stderr.write("equalcards" + "\n")
             if card1 in numberCardsRaise:
-                sys.stderr.write("equalnoraisejustbet")
+                sys.stderr.write("equalnoraisejustbet" + "\n")
                 return betSum
             else:
-                sys.stderr.write("equalandraise")
+                sys.stderr.write("equalandraise" + "\n")
                 return minRaise
 
         if card1 in numberCards:
@@ -43,7 +43,7 @@ class Player:
 
         if card2 in numberCards:
             return 0
-        sys.stderr.write("justbet")
+        sys.stderr.write("justbet" + "\n")
         return betSum
 
     def showdown(self, game_state):
