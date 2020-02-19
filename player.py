@@ -21,7 +21,11 @@ class Player:
         playerId = game_state["in_action"]
         player = game_state["players"][playerId]
         minRaise = game_state["current_buy_in"] - player["bet"] + game_state["minimum_raise"]
+        if minRaise > player["stack"]:
+            minRaise = player["stack"]
         betSum = game_state["current_buy_in"] - player["bet"]
+        if betSum > player["stack"]:
+            betSum = player["stack"]
 
         card1 = player["hole_cards"][0]["rank"]
         card2 = player["hole_cards"][1]["rank"]
