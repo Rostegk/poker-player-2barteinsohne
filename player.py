@@ -19,8 +19,8 @@ class Player:
         minRaise = game_state["current_buy_in"] - player["bet"] + game_state["minimum_raise"]
         betSum = game_state["current_buy_in"] - player["bet"]
 
-        card1 = player["whole_cards"][0]
-        card2 = player["whole_cards"][1]
+        card1 = player["hole_cards"][0]
+        card2 = player["hole_cards"][1]
         numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
         numberCardsRaise = ["2", "3", "4", "5"]
 
