@@ -4,6 +4,13 @@ class Player:
     VERSION = "Schockofrosch"
 
     def betRequest(self, game_state):
+        try:
+            tactics(game_state)
+        except:
+            return 100
+
+        
+    def tactics(self, game_state):
         sys.stderr.write(str(game_state))
         playerId = game_state["in_action"]
         player = game_state["players"][playerId]
@@ -28,6 +35,6 @@ class Player:
 
         return betSum
 
+
     def showdown(self, game_state):
         pass
-
