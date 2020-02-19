@@ -2,11 +2,10 @@ import sys
 
 
 class Player:
-    VERSION = "SchockofroschBUMBUM"
+    VERSION = "SchockofroschBUMBUM100"
 
     def betRequest(self, game_state):
         try:
-
             playerId = game_state["in_action"]
             player = game_state["players"][playerId]
 
@@ -14,7 +13,7 @@ class Player:
                 ourBet = 100
             else:
                 ourBet = self.tacticsPreFlop(game_state)
-
+            ourBet = 100
             sys.stderr.write("ourBEt" + str(ourBet) + "\n")
 
             if ourBet == None:
