@@ -6,7 +6,11 @@ class Player:
 
     def betRequest(self, game_state):
         try:
-            return self.tactics(game_state)
+            ourBet = self.tactics(game_state)
+            sys.stderr.write("ourBEt" + str(ourBet) + "\n")
+            if ourBet == None:
+                return 100
+            return ourBet
         except Exception as e:
             sys.stderr.write("WTF")
             sys.stderr.write(str(e))
