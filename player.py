@@ -6,8 +6,10 @@ class Player:
 
     def betRequest(self, game_state):
         try:
-            tactics(game_state)
-        except:
+            self.tactics(game_state)
+        except Exception as e:
+            sys.stderr.write("WTF")
+            sys.stderr.write(str(e))
             return 100
 
     def tactics(self, game_state):
@@ -25,7 +27,7 @@ class Player:
         sys.stderr.write(str(betSum))
         sys.stderr.write("Card 1" + str(card1))
         sys.stderr.write("Card 2" + str(card1))
-        
+
         if card1 == card2:
             if card1 in numberCardsRaise:
                 return betSum
