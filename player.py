@@ -23,7 +23,9 @@ class Player:
         numberCardsRaise = ["2", "3", "4", "5"]
 
         sys.stderr.write(str(betSum))
-
+        sys.stderr.write("Card 1" + str(card1))
+        sys.stderr.write("Card 2" + str(card1))
+        
         if card1 == card2:
             if card1 in numberCardsRaise:
                 return betSum
