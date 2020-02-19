@@ -5,6 +5,7 @@ class Player:
     VERSION = "Schockofrosch"
 
     def betRequest(self, game_state):
+        return 100
         try:
             self.tactics(game_state)
         except Exception as e:
