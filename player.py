@@ -2,7 +2,7 @@ import sys
 
 
 class Player:
-    VERSION = "Schockofrosch2"
+    VERSION = "SchockofroschBUMBUM"
 
     def betRequest(self, game_state):
         try:
