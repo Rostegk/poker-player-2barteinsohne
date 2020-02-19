@@ -6,7 +6,7 @@ class Player:
     def betRequest(self, game_state):
         sys.stderr.write(str(game_state))
         
-        return 10
+        return 25
 
     def showdown(self, game_state):
         pass
