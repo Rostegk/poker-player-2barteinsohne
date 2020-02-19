@@ -11,7 +11,7 @@ class Player:
             player = game_state["players"][playerId]
 
             if len(game_state["community_cards"]) > 3:
-                ourBet = self.tacticsPreFlop(game_state)
+                ourBet = game_state["current_buy_in"] - player["bet"]
             else:
                 ourBet = self.tacticsPreFlop(game_state)
 
