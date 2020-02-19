@@ -59,9 +59,11 @@ class Player:
                 return minRaise
 
         if card1 in highCards and card2 in highNumber:
+            sys.stderr.write("high cards 1 " + str(card2) + str(card1) + "\n")
             return betSum
 
         if card2 in highCards and card1 in highNumber:
+            sys.stderr.write("high cards 2 " + str(card2) + str(card1) + "\n")
             return betSum
 
         if card1 in numberCards:
